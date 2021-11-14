@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=1280, initial-scale=1.0">
@@ -23,10 +24,45 @@
     <script src="content/javascripts/manager.js"></script>
 
     <script type="text/javascript">
-    $(function() {
-        var shortcutMapper = new ShortcutMapper();
-        shortcutMapper.init();
-    })
+        $(function () {
+            var shortcutMapper = new ShortcutMapper();
+            shortcutMapper.init();
+
+            require('electron').
+                ipcRenderer.on('update-app', function (event, message) {
+
+                    console.log('update-app: msg=' + message);
+
+                    let file = shortcutMapper.selectedApp.file
+
+                    if (file != null) {
+                        for (let i = 0; i < file.length; i++) {
+                            if (file[i] == message) {
+                                console.log('update-app: no change');
+                                return;
+                            }
+                        }
+                    }
+
+                    for (var i = 0; i < sitedata_apps.length; i++) {
+                        file = sitedata_apps[i].file
+                        if (file == null)
+                            continue
+                        for (let j = 0; j < file.length; j++)
+                            if (file[j] == message) {
+                                shortcutMapper._updateAppOptions(sitedata_apps[i].name);
+                                shortcutMapper._updateVersionOptions(0);
+                                shortcutMapper._fetchAppKeydataAndUpdate();
+                                console.log('update-app: name= ' + sitedata_apps[i].name);
+                                return;
+                            }
+                    }
+
+                    console.log('update-app: no match');
+
+                });
+
+        })
     </script>
 </head>
 
@@ -35,15 +71,17 @@
         <header>
             <h1>快捷键映射图</h1>
             <p>一个可视化的快捷键浏览器。可以跟随 <a href='https://www.bilibili.com/video/BV1GX4y1L7EY'>视频教程</a> 添加快捷键。<br>
-			按下 Ctrl + F5 可更新缓存
-			</p>
+                按下 Ctrl + F5 可更新缓存
+            </p>
             <div id="banners">
                 <ul>
                     <li class="github">
-                        <a href="https://github.com/HaujetZhao/ShortcutMapper_Chinese">Github<span class="icon"></span></a>
+                        <a href="https://github.com/HaujetZhao/ShortcutMapper_Chinese">Github<span
+                                class="icon"></span></a>
                     </li>
-					<li class="gitee">
-                        <a href="https://gitee.com/haujet/ShortcutMapper_Chinese">Gitee<span class="gitee-icon"></span></a>
+                    <li class="gitee">
+                        <a href="https://gitee.com/haujet/ShortcutMapper_Chinese">Gitee<span
+                                class="gitee-icon"></span></a>
                     </li>
                 </ul>
             </div>
@@ -62,10 +100,12 @@
                     <!-- leave no spaces between buttons -->
                     <button id="os_windows" class="os-radiobutton os-windows leftfield" data-os="windows"><b></b>
                     </button><button id="os_osx" class="os-radiobutton os-mac midfield" data-os="mac"><b></b>
-                    </button><button id="os_linux" class="os-radiobutton os-linux rightfield" data-os="windows"><b></b></button>
+                    </button><button id="os_linux" class="os-radiobutton os-linux rightfield"
+                        data-os="windows"><b></b></button>
                 </div>
                 <div class="inputgroup">
-                    <select id="keyboardtype_select" name="keyboardtype_select" class="chosen-select keyboard-select"></select>
+                    <select id="keyboardtype_select" name="keyboardtype_select"
+                        class="chosen-select keyboard-select"></select>
                 </div>
             </nav>
         </header>
@@ -90,10 +130,13 @@
 
         <div id="footer">
             <span>
-                由 <a href="http://waldobronchart.be/">Waldo Bronchart</a> (<a href="https://twitter.com/wbronchart">@wbronchart</a>) 开发，此中文版为 <a href="https://space.bilibili.com/62637562">Haujet Zhao</a> 的 fork。</br>
-                
+                由 <a href="http://waldobronchart.be/">Waldo Bronchart</a> (<a
+                    href="https://twitter.com/wbronchart">@wbronchart</a>) 开发，此中文版为 <a
+                    href="https://space.bilibili.com/62637562">Haujet Zhao</a> 的 fork。</br>
+
             </span>
         </div>
     </div>
 </body>
+
 </html>

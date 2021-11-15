@@ -1,0 +1,17 @@
+{
+    "name": "Shortcut Mapper Electric",
+    "version": "1",
+    "default_context": "通用",
+    "os": ["windows", "mac", "linux"],
+    "contexts": {
+        "通用": {
+            "最小化": ["esc", ""],
+            "调出（全局）": ["win + esc", ""],
+            "刷新页面": ["f1", ""],
+            "刷新缓存": ["shift + f5", ""],
+            "全屏": ["f11", ""],
+            "关闭或退出": ["Alt + f4", ""],
+            "开发者工具": ["ctrl + shift + i", ""]
+        }
+    }
+}

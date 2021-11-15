@@ -1,0 +1,30 @@
+{
+  "name": "shortcutmapper_chinese",
+  "version": "1.0.0",
+  "description": "[中文](./README.md)　|　[English](./README_en.md)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "electron .",
+    "packager": "electron-packager . ShortcutMapper --win --out ../ShortcutMapper_Chinese_App --app-version 1.0.0  --overwrite --icon xx.ico"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tumuyan/ShortcutMapper_Chinese.git"
+  },
+  "keywords": [],
+  "author": "tumuyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tumuyan/ShortcutMapper_Chinese/issues"
+  },
+  "homepage": "https://github.com/tumuyan/ShortcutMapper_Chinese#readme",
+  "dependencies": {
+    "active-win": "^7.6.1",
+    "electron": "^15.3.1",
+    "electron-packager": "^15.4.0",
+    "electron-rebuild": "^3.2.5"
+  }
+}

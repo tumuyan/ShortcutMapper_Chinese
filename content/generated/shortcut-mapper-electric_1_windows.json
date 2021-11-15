@@ -1,0 +1,30 @@
+{
+    "name" : "Shortcut Mapper Electric",
+    "version" : "1",
+    "os" : "windows",
+    "mods_used" : ["ALT", "CONTROL", "OSKEY", "SHIFT"],
+    "default_context" : "通用",
+    "contexts" : {
+        "通用" : {
+            "ESCAPE" : [
+                {"name":"最小化", "mods":[]},
+                {"name":"调出（全局）", "mods":["OSKEY"]}
+            ],
+            "F1" : [
+                {"name":"刷新页面", "mods":[]}
+            ],
+            "F11" : [
+                {"name":"全屏", "mods":[]}
+            ],
+            "F4" : [
+                {"name":"关闭或退出", "mods":["ALT"]}
+            ],
+            "F5" : [
+                {"name":"刷新缓存", "mods":["SHIFT"]}
+            ],
+            "I" : [
+                {"name":"开发者工具", "mods":["CONTROL", "SHIFT"]}
+            ]
+        }
+    }
+}

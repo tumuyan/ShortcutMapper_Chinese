@@ -1,23 +1,27 @@
-[中文](./README.md)　|　[English](./README_en.md) 
-
-[Gitee](https://gitee.com/haujet/ShortcutMapper_Chinese )　|　[Github](https://github.com/HaujetZhao/ShortcutMapper_Chinese) 
-
-# Shortcut Mapper 中文
+# Shortcut Mapper Chinese | 快捷键映射图
 
 ## ⭐ 简介
 
-这是一个键盘快捷键可视化工具，托管在 Github 和 Gitee：
+这是一个键盘快捷键可视化工具，将应用程序的 `快捷键` 映射到 `虚拟键盘` 上，以便查找和学习快捷键。 
 
-* https://haujetzhao.github.io/ShortcutMapper_Chinese/
-* https://haujet.gitee.io/shortcutmapper_chinese/ 
+本仓库包含两个分支，其中：
+- `gh-pages` 用于github page服务；
+    访问链接 https://tumuyan.github.io/ShortcutMapper_Chinese/ 即可使用，与上游仓库完全兼容
+- `electron-app` 分支使用了electron对页面进行打包，额外实现了如下特性： 
+    1. 双击程序 `ShortcutMapper.exe` 即可全屏显示快捷键。
+    2. 按下热键 `Esc` 即可快速最小化窗口。
+    3. 热键 `Win+Esc` 可最大化窗口。
+    4. 使用热键最大化窗口时，根据按下热键时的前台程序的文件名，自动切换显示的快捷键配置为当前程序（支持一个程序对应多个文件名）。目前使用此功能需手动添加程序名到 `content\generated\app.js` 中，为每个程序添加 `file字段` 。
 
-这个项目的目标是，将应用程序的 **快捷键** 映射到 **虚拟键盘** 上，以便于查找和学习新的快捷键。 
+![electron-app-screenshot](assets/app.jpg)
 
-项目 fork 自 https://github.com/waldobronchart/ShortcutMapper ，原版是英文版，欢迎前去支持
+本仓库 fork 自 [HaujetZhao/ShortcutMapper_Chinese](https://github.com/HaujetZhao/ShortcutMapper_Chinese)，而 [ShortcutMapper_Chinese](https://github.com/HaujetZhao/ShortcutMapper_Chinese) 又 fork 自 [waldobronchart/ShortcutMapper](https://github.com/waldobronchart/ShortcutMapper)，欢迎前去支持。 
 
-整个项目的入口就是 `index.html` 这个文件。
 
-使用、添加快捷键、添加应用的视频教程详见：https://www.bilibili.com/video/BV1GX4y1L7EY
+以下内容为原仓库说明  
+----
+
+  
 
 ## 📝 背景
 

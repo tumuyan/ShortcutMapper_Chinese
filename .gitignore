@@ -42,3 +42,6 @@ icon*.png
 
 
 
+# ============node.js模块============
+node_modules
+package-lock.json

@@ -4,6 +4,23 @@
 
 var sitedata_apps = [
     {
+        name: "Windows",
+        data: {
+            "10": {
+                "windows": "windows_10_windows.json",
+            },
+        }
+    },
+    {
+        name: "Shortcut Mapper Electric",
+        data: {
+            "1": {
+                "windows": "shortcut-mapper-electric_1_windows.json",
+            },
+        },
+        file: ["ShortcutMapper.exe","electron.exe"]
+    },
+    {
         name: "Jupyter Notebook",
         data: {
             "1": {
@@ -18,7 +35,8 @@ var sitedata_apps = [
                 "mac": "kicad_5_mac.json",
                 "windows": "kicad_5_windows.json",
             },
-        }
+        },
+        file: ["kicad.exe"]
     },
     {
         name: "Microsoft Excel",
@@ -27,7 +45,8 @@ var sitedata_apps = [
                 "mac": "microsoft-excel_365_mac.json",
                 "windows": "microsoft-excel_365_windows.json",
             },
-        }
+        },
+        file: ["EXCEL.EXE"]
     },
     {
         name: "Microsoft PowerPoint",
@@ -36,7 +55,8 @@ var sitedata_apps = [
                 "mac": "microsoft-powerpoint_365_mac.json",
                 "windows": "microsoft-powerpoint_365_windows.json",
             },
-        }
+        },
+        file: ["POWERPNT.EXE"]
     },
     {
         name: "Microsoft Word",
@@ -45,7 +65,8 @@ var sitedata_apps = [
                 "mac": "microsoft-word_365_mac.json",
                 "windows": "microsoft-word_365_windows.json",
             },
-        }
+        },
+        file: ["WINWORD.EXE"]
     },
     {
         name: "One Commander",
@@ -79,14 +100,8 @@ var sitedata_apps = [
                 "mac": "vs-code_1_mac.json",
                 "windows": "vs-code_1_windows.json",
             },
-        }
+        },
+        file: ["Code.exe"]
     },
-    {
-        name: "Windows",
-        data: {
-            "10": {
-                "windows": "windows_10_windows.json",
-            },
-        }
-    },
+
 ];
